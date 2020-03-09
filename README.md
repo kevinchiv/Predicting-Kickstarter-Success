@@ -28,7 +28,7 @@ The model uses F2 i.e. it minimizes the number of false positives and false nega
 A false positive is campaign that was predicted to succeed, but would have failed. 
 Meanwhile, a false negative is a campaign that was predicted to failed, but would have succeeded.
 
-False negatives are weighted more because potentially successful projects should recieve the funding they need and deserve. Campaign success is a mutual goal for creators, backers, and Kickstarter itself.
+False negatives are weighted more because potentially successful projects should receive the funding they need and deserve. Campaign success is a mutual goal for creators, backers, and Kickstarter itself.
 
 
 ## Results: <br>
