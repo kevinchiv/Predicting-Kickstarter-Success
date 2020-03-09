@@ -5,8 +5,13 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Kevin Chiv">
+  <meta name="title" property='og:title' content="Kickstarter Success Predictor">
+  <!-- have to use full irl, relative irl do not work for open graph -->
+  <meta name="image" property="og:image" content="http://kickstarter-success-predictor.herokuapp.com/static/img/Kickstarter-preview.png">
+  <meta name="description" property='og:description' 
+    content="Machine learning app for assessing Kickstarter campaign strategy and success, built on Kickstarter data from 2009 to 2017">
+  <meta property="og:url" content="https://kickstarter-success-predictor.herokuapp.com/">
 
   <title>Kickstarter Success Predictor</title>
 
@@ -85,7 +90,7 @@
           A false positive is campaign that was predicted to succeed, but would have failed.
           Meanwhile, a false negative is a campaign that was predicted to failed, but would have succeeded.
         <p>
-          False negatives are weighted more because potentially successful projects should recieve the funding they need and deserve.
+          False negatives are weighted more because potentially successful projects should receive the funding they need and deserve.
           Campaign success is a mutual goal for creators, backers, and Kickstarter itself. 
         </p> 
       </div>
