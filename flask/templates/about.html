@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Kickstarter Success Predictor</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/kickstarter.css" rel="stylesheet">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+  <link rel="manifest" href="../static/img/site.webmanifest">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container" id="nav">
+      <div class="navbar-brand">
+        <!-- usual display for laptops -->
+        <div>
+          <img id="icon" src="../static/img/kickstarter-logo-k-black.png" width=auto height=30px>
+          ickstarter Success Predictor
+        </div>
+        <!-- alternative display for mobile -->
+        <div id='alt'>
+          <img id="icon" src="../static/img/kickstarter-logo-k-black.png" width=auto height=30px>
+          ickstarter<br>Success Predictor
+        </div>
+      </div>
+      <div id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" >
+            <a class="nav-link" href="/">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="active-page" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" id="main">
+    <div class="row">
+      <div class="column col-lg-8 col-md-10 mx-auto column-left">
+        <h1>About</h1>
+        <p>
+          Kickstarter is a global crowdfunding platform that helps independent creators finance their projects.
+        </p>
+        <p>
+          What makes Kickstarter noteworthy and powerful is its community. 
+          Specifically, the community's ability to turn campaigns into million dollar success stories.
+        </p>
+        <p>
+          I created this machine learning app to help independent creators pinpoint factors that could help or hinder a potential campaign.
+        </p>
+        <p>
+          The machine learning model was trained on Kickstarter data from 2009 to 2017.
+          The model minimizes the number of false positives and false negatives, with false negatives being weighted more.
+        </p>
+        <p>
+          A false positive is campaign that was predicted to succeed, but would have failed.
+          Meanwhile, a false negative is a campaign that was predicted to failed, but would have succeeded.
+        <p>
+          False negatives are weighted more because potentially successful projects should recieve the funding they need and deserve.
+          Campaign success is a mutual goal for creators, backers, and Kickstarter itself. 
+        </p> 
+      </div>
+
+      <div class="column col-lg-8 col-md-10 mx-auto column-right" 
+          style="display: flex; align-items: center; justify-content: center;">
+        <img src="../static/img/Different Metrics Across Thresholds.png" width="125%"
+            height=auto>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- Custom scripts for this template -->
+  <!-- <script src="js/clean-blog.min.js"></script> -->
+
+</body>
+
+</html>

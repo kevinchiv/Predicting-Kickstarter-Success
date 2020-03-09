@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Kickstarter Success Predictor</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/kickstarter.css" rel="stylesheet">
+
+  <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon-16x16.png">
+  <link rel="manifest" href="../static/img/site.webmanifest">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container" id="nav">
+      <div class="navbar-brand">
+        <!-- usual display for laptops -->
+        <div>
+          <img id="icon" src="../static/img/kickstarter-logo-k-black.png" width=auto height=30px>
+          ickstarter Success Predictor
+        </div>
+        <!-- alternative display for mobile -->
+        <div id='alt'>
+          <img id="icon" src="../static/img/kickstarter-logo-k-black.png" width=auto height=30px>
+          ickstarter<br>Success Predictor
+        </div>
+      </div>
+      <div id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" >
+            <a class="nav-link"  id="active-page" href="/">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container" id="main">
+    <div class="row">
+      <div class="column col-lg-8 col-md-10 mx-auto column-left">
+<!--         <div class="col-lg-8 col-md-10 mx-auto"> -->      
+          <h1>Enter Campaign Info</h1>
+          <form action="/predict">
+                <div class="form-row">
+                  <div class="form-column-left">
+                    <label>Campaign Name:</label>
+                  </div>
+                  <div class="form-column-right">
+                    <input type="text" name="Campaign Name" value="{{form_inputs['Campaign Name']}}" 
+                      minlength="0" maxlength="140" width=25 height=15 required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-column-left">
+                    <label>Campaign Duration (Days):</label>
+                  </div>
+                  <div class="form-column-right">
+                    <!-- Currently Kickstarter campaign length goes from 1-60 days -->
+                    <input type="number" name="Campaign Duration" value="{{form_inputs['Campaign Duration']}}" 
+                        min=1 max=60 width=50 required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-column-left">
+                    <label>Campaign Goal Amount ($):</label>
+                  </div>
+                  <div class="form-column-right">
+                    <!-- 200 is the minimum amount since that is what the model was trained -->
+                    <input type="number" name="Campaign Goal Amount" value="{{form_inputs['Campaign Goal Amount']}}" 
+                        min=200 max=1000000 width=50 required>
+                  </div>
+                </div>
+
+                <div class="form-row">  
+                  <div class="form-column-left">
+                    <label>Main Category:</label>
+                  </div>
+                  <div class="form-column-right">
+                    <select name="Main Category" width=50 required>
+                      <option disabled selected value>{{form_inputs['Main Category']}}</option>
+                      <option value='Art'>Art</option>
+                      <option value='Comics'>Comics</option>
+                      <option value='Crafts'>Crafts</option>
+                      <option value='Dance'>Dance</option>
+                      <option value='Design'>Design</option>
+                      <option value='Fashion'>Fashion</option>
+                      <option value='Film & Video'>Film & Video</option>
+                      <option value='Food'>Food</option>
+                      <option value='Games'>Games</option>
+                      <option value='Journalism'>Journalism</option>
+                      <option value='Music'>Music</option>
+                      <option value='Photography'>Photography</option>
+                      <option value='Publishing'>Publishing</option>
+                      <option value='Technology'>Technology</option>
+                      <option value='Theater'>Theater</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-column-left">
+                    <label>Estimated Backers Count:</label>
+                  </div>
+                  <div class="form-column-right">
+                    <input type="number" name="Backers" value="{{form_inputs['Backers']}}" 
+                        min=0 max=10000000 size=50 required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-column-right">
+                    <input class="btn btn-primary float-right" type="submit" value="Submit" method="get">
+                  </div>
+                </div>
+
+
+          </form>
+        <!-- </div> -->
+      </div>
+
+      <div class="column col-lg-8 col-md-10 mx-auto column-right">
+<!--         display everything encased in if stateement only when probability is not '',
+        useful for hiding content until submit is clicked -->
+        <!-- <div class="col-lg-8 col-md-10 mx-auto"> -->
+          {% if probability != '' %}
+            <h2>Prediction</h2>
+            <p id="prob-text">
+              Probability of Success: {{probability}}%
+              <br>
+              {{prediction}}
+            </p> 
+
+            <p>
+              See SHAP force plot below for details.
+              Factors that are red and point right increase probability of campaign success. 
+              Factors that are blue and point left decrease probability of campaign success. 
+            </p>
+            <p>
+              While main categories are not changeable, aim to have: <br>
+              - A minimum of 45 Kickstarter backers <br>
+              - A deadline of 30 days or less <br>
+              - A reasonably long, interesting title<br>
+              - A reasonable goal amount
+            </p>
+            <p id='plot'>
+              Scroll right and left to see plot.
+            </p>
+          {% endif %}
+        
+      </div>
+    </div>
+
+    <div class="row">
+      {% if probability != '' %}
+        <div id="shap">
+          <img src="{{SHAP_force_plot}}" width="100%" height=auto>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <!--   Bootstrap core JavaScript-->  
+  <!-- <script src="../static/vendor/jquery/jquery.min.js"></script> -->
+  <!-- <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- Custom scripts for this template -->
+  <!-- <script src="../static/js/clean-blog.js"></script> -->
+
+</body>
+
+</html>
