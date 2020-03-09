@@ -40,3 +40,6 @@ If we ignore the main categories, the results indicate that on average: <br>
 - having a shorter project duration is crucial, specifically 30 days or less
 - have a reasonably long i.e. informative and interesting title is significant
 - having a reasonable goal amount helps
+
+The app is currently hosted at: 
+http://kickstarter-success-predictor.herokuapp.com/
