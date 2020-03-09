@@ -1,7 +1,7 @@
 # Predicting Kickstarter Success
 
 ## Description: 
-Kickstarter is a global crowdfunding platform that helps independent creators finance their projects. What makes Kickstarter noteworthy and powerful is its community. Specifically, the community's ability to turn campaigns into million dollar success stories. 
+Kickstarter is a global crowdfunding platform that helps independent creators finance their projects. What makes Kickstarter noteworthy and powerful is its community, specifically its ability to turn campaigns into million dollar success stories. 
 
 ## Objective: 
 Each year, several projects fail.
@@ -32,7 +32,7 @@ False negatives are weighted more because potentially successful projects should
 
 
 ## Results: <br>
-The best model was XGB Classifier, but I chose to use SGD Classifier for the speed, scalability, and model interpretability.
+The best model was XGB Classifier, but I chose to use SGD Classifier for the speed, scalability, and model interpretability. <br>
 In terms of F2, SGD Classifer had a score of 0.822 on train and 0.823 on test.
 
 If we ignore the main categories, the results indicate that on average: <br>
