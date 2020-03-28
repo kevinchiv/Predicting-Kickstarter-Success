@@ -4,7 +4,7 @@
 Kickstarter is a global crowdfunding platform that helps independent creators finance their projects. What makes Kickstarter noteworthy and powerful is its community, specifically its ability to turn campaigns into million dollar success stories. 
 
 ## Objective: 
-Each year, several projects fail.
+Each year, several projects fail. Since funding is all-or-nothing, this means project teams will not receive any funds to actualize their vision. In addition, project backers will not receive rewards for donation pledges and Kickstarter will not receive a percent of the donated funds. Essentially, every part of whole Kickstarter community is affected.
 
 The goal of this project is to help independent creators pinpoint factors that could help or hinder a potential campaign.
 
