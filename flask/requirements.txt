@@ -11,7 +11,7 @@ seaborn==0.9.0
 shap==0.34.0
 wcwidth==0.1.7
 webencodings==0.5.1
-Werkzeug==0.16.0
+Werkzeug==2.2.3
 wget==3.2
 widgetsnbextension==3.5.1
 wrapt==1.11.2
