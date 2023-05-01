@@ -1,4 +1,4 @@
-Flask==1.1.1
+Flask==2.3.2
 glob2==0.7
 gunicorn
 numpy==1.17.2
